@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import PokemonCard from "./PokemonCard";
 import TradeArea from "./TradeArea";
+
 const PokemonList = () => {
   const [allPokemons, setAllPokemons] = useState([]);
   const [loadMore, setLoadMore] = useState(
@@ -72,7 +73,9 @@ const PokemonList = () => {
           />
         ))}
       </div>
-      <button onClick={getPokemons}>Load More</button>
+      <button className="loadMoreBtn" onClick={getPokemons}>
+        Load More
+      </button>
     </div>
   );
 };

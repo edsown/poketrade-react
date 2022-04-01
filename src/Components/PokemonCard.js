@@ -30,8 +30,12 @@ const PokemonCard = ({
       </p>
       <img className="cardImage" src={image} alt={name}></img>
       <div className="chooseButton">
-        <button onClick={() => onClickA(currentPokemon)}>A</button>
-        <button onClick={() => onClickB(currentPokemon)}>B</button>
+        <button className="teamBtnA" onClick={() => onClickA(currentPokemon)}>
+          A
+        </button>
+        <button className="teamBtnB" onClick={() => onClickB(currentPokemon)}>
+          B
+        </button>
       </div>
     </div>
   );

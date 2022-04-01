@@ -12,6 +12,7 @@ function TradeArea({ teamA, teamB, handleClearPokemon }) {
   function handleClear() {
     setHistory([]);
     handleClearPokemon();
+    setFairTrade(undefined);
   }
 
   function handleTrade() {
@@ -80,7 +81,7 @@ function TradeArea({ teamA, teamB, handleClearPokemon }) {
               })}
             </div>
           ) : (
-            <p>Add up to 6 pokemon to start trading</p>
+            <p>Add up to 6 pokemon to start</p>
           )}
           <h2 className="teamTitle"> Team B:</h2>
           {teamA.length != 0 ? (
@@ -105,7 +106,7 @@ function TradeArea({ teamA, teamB, handleClearPokemon }) {
               })}
             </div>
           ) : (
-            <p>Add up to 6 pokemon to start trading</p>
+            <p>Add up to 6 pokemon to start</p>
           )}
           <div className="tradeArea">
             {fairTrade === undefined ? (
@@ -113,7 +114,7 @@ function TradeArea({ teamA, teamB, handleClearPokemon }) {
             ) : fairTrade ? (
               <p className="fairTrade">Fair trade</p>
             ) : (
-              "troca ruim"
+              <p className="unfairTrade">Unfair trade</p>
             )}
             <div className="btnContainer">
               <button className="tradeBtn" onClick={() => handleTrade()}>
@@ -122,7 +123,7 @@ function TradeArea({ teamA, teamB, handleClearPokemon }) {
               <button className="resetBtn" onClick={() => handleClear()}>
                 Reset
               </button>
-            </div>{" "}
+            </div>
           </div>
         </div>
         <div className="historyContainer">
@@ -131,8 +132,8 @@ function TradeArea({ teamA, teamB, handleClearPokemon }) {
             return (
               <div>
                 <p>{item.tradeTime}</p>
-                <p>{item.fair === true ? "Justa" : "Injusta"}</p>
-                <p>{item.diff} points difference</p>
+                <p>{item.fair === true ? "Fair" : "Unfair"}</p>
+                <p>{item.diff} point difference</p>
 
                 <hr className="dotted" />
               </div>

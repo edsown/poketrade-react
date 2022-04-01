@@ -4,8 +4,7 @@ function App() {
   return (
     <div className="App">
       <div className="title">
-        <h1> Poke trader</h1>
-        <h2>Add up to 6 pokemon to each team to start trading</h2>
+        <h1>Poke trader</h1>
       </div>
       <PokemonList />
     </div>
