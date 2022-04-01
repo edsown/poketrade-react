@@ -10,7 +10,7 @@ const PokemonList = () => {
   );
   const [blueTeam, setBlueTeam] = useState([]);
   const [redTeam, setRedTeam] = useState([]);
-  const [visible, setVisible] = useState(true);
+  const [visible, setVisible] = useState(false);
 
   const timeOut = () => {
     setVisible(true);
