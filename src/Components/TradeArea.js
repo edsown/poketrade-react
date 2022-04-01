@@ -2,7 +2,7 @@ import React, { useState } from "react";
 
 function TradeArea({ teamA, teamB, handleClearPokemon }) {
   const [toggleModal, setToggleModal] = useState(false);
-  const [fairTrade, setFairTrade] = useState(undefined);
+  const [fairTrade, setFairTrade] = useState(undefined); // undefined para começar em estado neutro
   const [history, setHistory] = useState([]);
 
   function handleModal() {
@@ -11,7 +11,7 @@ function TradeArea({ teamA, teamB, handleClearPokemon }) {
 
   function handleClear() {
     setHistory([]);
-    handleClearPokemon();
+    handleClearPokemon(); // Passada como prop
     setFairTrade(undefined);
   }
 
@@ -30,7 +30,7 @@ function TradeArea({ teamA, teamB, handleClearPokemon }) {
 
       const tradeTime = new Date().toLocaleTimeString("pt-BR");
       setHistory([
-        ...history,
+        ...history, // histórico que já existe, com spread operator, adicionado de um objeto com novos valores. Simples e fácil
         {
           fair: true,
           diff: Math.abs(scoreA - scoreB),
