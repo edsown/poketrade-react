@@ -12,12 +12,12 @@ const PokemonList = () => {
   const [redTeam, setRedTeam] = useState([]);
   const [visible, setVisible] = useState(false);
 
-  const timeOut = () => {
-    setVisible(true);
-    setTimeout(() => {
-      setVisible(false);
-    }, 1000);
-  };
+  // const timeOut = () => {
+  //   setVisible(true);
+  //   setTimeout(() => {
+  //     setVisible(false);
+  //   }, 1000);
+  // };
 
   const getPokemons = async () => {
     const res = await fetch(loadMore);
@@ -31,6 +31,7 @@ const PokemonList = () => {
         );
         const data = await res.json();
         setAllPokemons((currentList) => [...currentList, data]);
+        await allPokemons.sort((a, b) => a.id - b.id);
       });
     }
     getPokemonData(data.results);
@@ -45,7 +46,7 @@ const PokemonList = () => {
     } else {
       setBlueTeam([...blueTeam, pokemon]);
       console.log(blueTeam, "team blue");
-      timeOut();
+      // timeOut();
     }
   }
   function handleB(pokemon) {
@@ -55,7 +56,7 @@ const PokemonList = () => {
       setRedTeam([...redTeam, pokemon]);
       console.log(redTeam, "team red");
     }
-    timeOut();
+    // timeOut();
   }
 
   function handleClearPokemon() {
@@ -86,7 +87,7 @@ const PokemonList = () => {
           />
         ))}
       </div>
-      <button className="loadMoreBtn" onClick={getPokemons}>
+      <button className="loadMoreBtn" onClick={() => getPokemons()}>
         Load More
       </button>
     </div>

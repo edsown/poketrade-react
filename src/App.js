@@ -1,13 +1,11 @@
 import PokemonList from "./Components/PokemonList";
-
+import Navbar from "./Components/Navbar";
 import React from "react";
 
 function App() {
   return (
     <div className="App">
-      <div className="title">
-        <h1>Poke trader</h1>
-      </div>
+      <Navbar />
 
       <PokemonList />
     </div>

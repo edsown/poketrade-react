@@ -123,17 +123,6 @@ h4 {
   padding: 15px;
 }
 
-@media only screen and (max-width: 800px) {
-  .tradeModal {
-    top: 5%;
-    background-color: whitesmoke;
-    position: fixed;
-    font-size: 0.95rem;
-    width: 75vw;
-    height: 90%;
-  }
-}
-
 .deckBtn {
   color: whitesmoke;
   background-color: #7cb9e8;
@@ -149,7 +138,7 @@ h4 {
   margin-bottom: 5%;
   margin-right: 5%;
   cursor: pointer;
-  z-index: 100;
+  z-index: 1000;
 }
 
 .deckBtn:hover {
@@ -162,11 +151,18 @@ h4 {
 }
 .loadMoreBtn {
   margin: 20px;
+  width: 150px;
+  padding: 10px;
+  background-color: #7cb9e8;
+  color: whitesmoke;
+  border-style: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1.2rem;
 }
 .tradeBtn,
 .resetBtn,
-.closeBtn,
-.loadMoreBtn {
+.closeBtn {
   width: 100px;
   background-color: #7cb9e8;
   font-weight: 600;
@@ -308,4 +304,7 @@ h4 {
   right: 5%;
   top: 60%;
   z-index: 100;
+}
+.navComponent {
+  padding: 20px;
 }
