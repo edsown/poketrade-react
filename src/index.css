@@ -149,6 +149,7 @@ h4 {
   margin-bottom: 5%;
   margin-right: 5%;
   cursor: pointer;
+  z-index: 1000;
 }
 
 .deckBtn:hover {
@@ -272,7 +273,6 @@ h4 {
   position: absolute;
 }
 
-/* Team buttons thanks to freefrontend */
 
 .teamBtnA {
   color: whitesmoke;
