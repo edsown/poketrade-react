@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import PokemonCard from "./PokemonCard";
 import TradeArea from "./TradeArea";
+import Snackbar from "./Snackbar";
 
 const PokemonList = () => {
   const [allPokemons, setAllPokemons] = useState([]);
@@ -9,6 +10,14 @@ const PokemonList = () => {
   );
   const [blueTeam, setBlueTeam] = useState([]);
   const [redTeam, setRedTeam] = useState([]);
+  const [visible, setVisible] = useState(true);
+
+  const timeOut = () => {
+    setVisible(true);
+    setTimeout(() => {
+      setVisible(false);
+    }, 1000);
+  };
 
   const getPokemons = async () => {
     const res = await fetch(loadMore);
@@ -32,19 +41,21 @@ const PokemonList = () => {
   }, []);
   function handleA(pokemon) {
     if (blueTeam.length === 6) {
-      alert("Só é possível adicionar até 6 pokemons");
+      alert("Maximum of 6 pokemon per team");
     } else {
       setBlueTeam([...blueTeam, pokemon]);
       console.log(blueTeam, "team blue");
+      timeOut();
     }
   }
   function handleB(pokemon) {
     if (redTeam.length === 6) {
-      alert("Só é possível adicionar até 6 pokemons");
+      alert("Maximum of 6 pokemon per team");
     } else {
       setRedTeam([...redTeam, pokemon]);
       console.log(redTeam, "team red");
     }
+    timeOut();
   }
 
   function handleClearPokemon() {
@@ -54,6 +65,8 @@ const PokemonList = () => {
 
   return (
     <div className="masterContainer">
+      <Snackbar visible={visible} />
+
       <TradeArea
         teamA={blueTeam}
         teamB={redTeam}

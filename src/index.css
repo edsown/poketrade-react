@@ -297,3 +297,13 @@ h4 {
 .teamBtnA:hover {
   background-color: #436580;
 }
+
+.snack {
+  border-radius: 5px;
+  background-color: #3eb249;
+  padding: 15px;
+  color: whitesmoke;
+  position: fixed;
+  right: 5%;
+  top: 70%;
+}
