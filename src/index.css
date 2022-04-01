@@ -28,7 +28,7 @@ h4 {
 }
 
 .masterContainer {
-  max-width: 70vw;
+  max-width: 75vw;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -149,6 +149,7 @@ h4 {
   margin-bottom: 5%;
   margin-right: 5%;
   cursor: pointer;
+  z-index: 100;
 }
 
 .deckBtn:hover {
@@ -305,5 +306,6 @@ h4 {
   color: whitesmoke;
   position: fixed;
   right: 5%;
-  top: 70%;
+  top: 60%;
+  z-index: 100;
 }
