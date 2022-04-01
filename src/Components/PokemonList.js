@@ -12,12 +12,12 @@ const PokemonList = () => {
   const [redTeam, setRedTeam] = useState([]);
   const [visible, setVisible] = useState(false);
 
-  // const timeOut = () => {
-  //   setVisible(true);
-  //   setTimeout(() => {
-  //     setVisible(false);
-  //   }, 1000);
-  // };
+  const timeOut = () => {
+    setVisible(true);
+    setTimeout(() => {
+      setVisible(false);
+    }, 1000);
+  };
 
   const getPokemons = async () => {
     const res = await fetch(loadMore);
@@ -46,7 +46,7 @@ const PokemonList = () => {
     } else {
       setBlueTeam([...blueTeam, pokemon]);
       console.log(blueTeam, "team blue");
-      // timeOut();
+      timeOut();
     }
   }
   function handleB(pokemon) {
@@ -56,7 +56,7 @@ const PokemonList = () => {
       setRedTeam([...redTeam, pokemon]);
       console.log(redTeam, "team red");
     }
-    // timeOut();
+    timeOut();
   }
 
   function handleClearPokemon() {

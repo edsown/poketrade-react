@@ -109,6 +109,7 @@ h4 {
   backdrop-filter: blur(5px);
   background-color: rgba(0, 0, 0, 0.3);
   z-index: 1000;
+  align-items: center;
 }
 
 .tradeModal {
@@ -221,11 +222,6 @@ h4 {
   max-width: 50%;
 }
 
-.teamTitle {
-  top: 0;
-  width: 100%;
-}
-
 .historyContainer {
   margin-left: 50%;
   margin-right: auto;
@@ -269,7 +265,6 @@ h4 {
   position: absolute;
 }
 
-
 .teamBtnA {
   color: whitesmoke;
   background-color: #7cb9e8;
@@ -306,4 +301,43 @@ h4 {
 }
 .navComponent {
   padding: 20px;
+}
+
+.logo {
+  max-width: 60vw;
+}
+
+@media (max-width: 1366px) {
+  .tradeModal {
+    height: 95%;
+    top: 1%;
+    width: auto;
+  }
+  .teamA {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-bottom: 0;
+    max-height: 42%;
+  }
+  .teamB {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-wrap: wrap;
+    max-height: 52%;
+    max-width: fit-content;
+  }
+  .historyContainer {
+    display: none;
+  }
+
+  .selectedPokemon {
+    font-size: 12px;
+  }
+
+  .selectedPokemonImage {
+    display: none;
+  }
 }

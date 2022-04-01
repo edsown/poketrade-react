@@ -58,7 +58,7 @@ function TradeArea({ teamA, teamB, handleClearPokemon }) {
     <div className="modalContainer">
       <div className="tradeModal">
         <div className="teamContainer">
-          <h2 className="teamTitle"> Team A:</h2>
+          <h3 className="teamTitle"> Team A:</h3>
           {teamA.length !== 0 ? (
             <div className="teamA">
               {teamA.map((pokemon) => {
@@ -83,7 +83,7 @@ function TradeArea({ teamA, teamB, handleClearPokemon }) {
           ) : (
             <p>Add up to 6 pokemon to start</p>
           )}
-          <h2 className="teamTitle"> Team B:</h2>
+          <h3 className="teamTitle"> Team B:</h3>
           {teamA.length !== 0 ? (
             <div className="teamB">
               {teamB.map((pokemon) => {
