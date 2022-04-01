@@ -311,7 +311,7 @@ h4 {
   .tradeModal {
     height: 95%;
     top: 1%;
-    width: auto;
+    width: 70vw;
   }
   .teamA {
     display: flex;
@@ -326,7 +326,7 @@ h4 {
     flex-direction: column;
     align-items: center;
     flex-wrap: wrap;
-    max-height: 52%;
+    max-height: 42%;
     max-width: fit-content;
   }
   .historyContainer {
