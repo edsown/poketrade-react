@@ -132,7 +132,7 @@ function TradeArea({ teamA, teamB, handleClearPokemon }) {
             return (
               <div>
                 <p>{item.tradeTime}</p>
-                <p>{item.fair === true ? "Fair" : "Unfair"}</p>
+                <p>{item.fair === true ? "Fair trade" : "Unfair trade"}</p>
                 <p>{item.diff} point difference</p>
 
                 <hr className="dotted" />
