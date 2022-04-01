@@ -1,7 +1,22 @@
-import React from "react";
-
-const PokemonCard = ({ xp, name, image, index, type, setTeam }) => {
+import React, { useState, useEffect } from "react";
+import axios from "axios";
+const PokemonCard = ({
+  xp,
+  name,
+  image,
+  index,
+  type,
+  url,
+  onClickA,
+  onClickB,
+}) => {
   const style = `cardContainer ${type}`;
+
+  const [currentPokemon, setCurrentPokemon] = useState();
+
+  useEffect(() => {
+    axios.get(`${url}`).then((res) => setCurrentPokemon(res.data));
+  }, [url]); // Poderia puxar só o nome e a base_exp, mas vou puxar tudo pra quando houver mais funcionalidade
 
   return (
     <div className={style}>
@@ -11,12 +26,12 @@ const PokemonCard = ({ xp, name, image, index, type, setTeam }) => {
       </div>
 
       <p>
-        Experiência base: <strong>{xp}</strong>
+        Base experience: <strong>{xp}</strong>
       </p>
       <img className="cardImage" src={image} alt={name}></img>
       <div className="chooseButton">
-        <button onClick={setTeam}>A</button>
-        <button onClick={setTeam}>B</button>
+        <button onClick={() => onClickA(currentPokemon)}>A</button>
+        <button onClick={() => onClickB(currentPokemon)}>B</button>
       </div>
     </div>
   );
